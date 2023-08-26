@@ -1,11 +1,11 @@
 <p align="center">
-<img width=100 src="https://github.com/abielzulio/chatgpt-raycast/blob/main/assets/icon@dark.png?raw=true">
+<img width=100 src="assets/extension_icon.png">
 </p>
 
 <h1 align="center">Tailwind Tools</h1>
 
 <h3 align="center">
-Work with your custom or default Tailwind organized with cute icons and some tools.
+Work with your custom config organized with cute icons and some tools.
 </h3>
 
 ## Features
