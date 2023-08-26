@@ -8,17 +8,9 @@
  *   Value      none
  * ===========================================
  */
-export type Rule = {
-  selector: string;
-  declaration: string;
-};
 
 type Selector = string;
+type Declaration = string;
+type Category = string | "";
 
-type Declaration = {
-  property: Property;
-  value: Value;
-};
-
-type Property = string;
-type Value = string | number;
+export type Rule = [Selector, Declaration, Category];

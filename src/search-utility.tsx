@@ -9,37 +9,39 @@ export default function SearchUtility() {
   const [query, setQuery] = useState("");
 
   const results = (utilities as Rule[])
-    .filter((c) => c.selector.includes(query) || c.declaration.includes(query))
-    .slice(0, 200);
+    .filter(([selector, declaration, category]) => {
+      return selector.includes(query) || declaration.includes(query) || category.includes(query);
+    })
+    .slice(0, 100);
 
   return (
-    <List
-      searchText={query}
-      onSearchTextChange={setQuery}
-      searchBarPlaceholder="Search by utility name or css props ..."
-    >
-      {results.map(({ selector, declaration }) => {
-        const selectorNoDot = selector.replace(".", "");
-        const prop = declaration.split(":")[0];
-        const cat = categories.find((item) => item.props.includes(prop));
-        const icon = Icon[(cat ? cat.icon : "Circle") as keyof typeof Icon];
-
-        return (
-          <List.Item
-            key={selector}
-            icon={{ source: icon, tintColor: "#38BDF899" }}
-            title={selectorNoDot}
-            subtitle={{ value: declaration, tooltip: declaration }}
-            accessories={[{ tag: { value: `${cat?.name || "Default"}`, color: "#999999" } }]}
-            actions={
-              <ActionPanel>
-                <Action.CopyToClipboard title="Copy Selector" content={selectorNoDot} />
-                <Action.Paste title="Paste Selector" content={selectorNoDot} />
-              </ActionPanel>
-            }
-          />
-        );
+    <List searchText={query} onSearchTextChange={setQuery} searchBarPlaceholder="Search by name, css or cat...">
+      {results.map(([selector, declaration, category]) => {
+        return <Item key={selector} selector={selector} declaration={declaration} category={category} />;
       })}
     </List>
   );
 }
+
+const Item = ({ selector, declaration, category }: { selector: string; declaration: string; category: string }) => {
+  const selectorNoDot = selector.replace(".", "");
+  const cat = categories.find((c) => c.name === category);
+  return (
+    <List.Item
+      icon={
+        cat
+          ? { source: Icon[cat.icon as keyof typeof Icon], tintColor: "#38BDF899" }
+          : { source: Icon.Circle, tintColor: "#99999999" }
+      }
+      title={selectorNoDot}
+      subtitle={{ value: declaration, tooltip: declaration }}
+      accessories={cat ? [{ tag: { value: cat.name, color: "#999999" } }] : []}
+      actions={
+        <ActionPanel>
+          <Action.CopyToClipboard title="Copy Selector" content={selectorNoDot} />
+          <Action.Paste title="Paste Selector" content={selectorNoDot} />
+        </ActionPanel>
+      }
+    />
+  );
+};
