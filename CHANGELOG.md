@@ -1,3 +1,6 @@
-# Tailwind CSS Changelog
+# Tailwind Tools Changelog
 
-## [Initial Version] - 2023-08-13
+## [Unreleased]
+
+- Search and use utility classes by name or css values.
+- Nice icons to describe the classes by category.
