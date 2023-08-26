@@ -1,11 +1,10 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "tailwind-css",
-  "title": "Tailwind CSS",
-  "description": "Work with your Tailwind CSS theme",
-  "icon": "command-icon.png",
+  "name": "tailwind-tools",
+  "title": "Tailwind Tools",
+  "description": "Work with your custom or default Tailwind organized with cute icons and some tools.",
+  "icon": "extension_icon.png",
   "author": "manumorante",
-  "owner": "capsule",
   "categories": [
     "Developer Tools",
     "Productivity"
@@ -13,14 +12,14 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "index",
+      "name": "search-utility",
       "title": "Search utility",
-      "description": "Template for showing a static list",
+      "description": "Search by utility name or css props",
       "mode": "view"
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.57.1"
+    "@raycast/api": "^1.50.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
@@ -28,13 +27,15 @@
     "@types/react": "18.0.9",
     "eslint": "^7.32.0",
     "prettier": "^2.5.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "css": "^3.0.0"
   },
   "scripts": {
     "build": "ray build -e dist",
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
-    "publish": "npx @raycast/api@latest publish"
+    "publish": "npx @raycast/api@latest publish",
+    "prepare": "node ./prepare/index.mjs"
   }
 }
