@@ -1,105 +1,197 @@
 [
   {
-    "name": "Font",
+    "name": "font",
     "icon": "Text",
     "props": [
       "font-family",
       "font-size",
       "font-weight",
+      "font-style",
+
       "list-style-type",
-      "text-decoration",
       "line-height",
-      "text-align",
-      "text-transform",
       "white-space",
       "outline",
-      "-webkit-line-clamp"
+      "letter-spacing",
+      "hyphens",
+
+      "text-decoration",
+      "text-align",
+      "text-transform",
+      "font-variant-numeric",
+      "text-indent",
+      "text-overflow",
+      "text-underline-offset",
+      "text-decoration-style",
+      "text-decoration-thickness",
+      "text-decoration-line",
+
+      "-webkit-line-clamp",
+      "-webkit-font-smoothing",
+
+      "--tw-text-opacity"
     ]
   },
   {
-    "name": "Flex",
+    "name": "flex",
     "icon": "BarCode",
     "props": [
       "flex",
       "flex-direction",
       "flex-wrap",
       "flex-flow",
-      "flex",
       "flex-basis",
       "column-gap",
       "row-gap",
+
       "align-items",
       "align-self",
-      "justify-content"
+      "justify-content",
+      "justify-self"
     ]
   },
   {
-    "name": "Box model",
+    "name": "box",
     "icon": "Box",
-    "props": ["box-sizing", "-webkit-box-orient", "display"]
+    "props": ["box-sizing", "-webkit-box-orient", "display", "content"]
   },
   {
-    "name": "Grid",
+    "name": "grid",
     "icon": "AppWindowSidebarLeft",
-    "props": ["grid"]
+    "props": ["grid", "place-self"]
   },
   {
-    "name": "Position",
+    "name": "position",
     "icon": "Geopin",
-    "props": ["position", "top", "right", "bottom", "left", "inset"]
+    "props": ["position", "top", "right", "bottom", "left", "inset", "vertical-align", "object-position"]
   },
   {
-    "name": "Visibility",
+    "name": "visibility",
     "icon": "Eye",
-    "props": ["overflow", "overflow-y", "z-index", "opacity", "visibility"]
+    "props": ["overflow", "overflow-x", "overflow-y", "z-index", "opacity", "visibility"]
   },
   {
-    "name": "Background",
+    "name": "background",
     "icon": "Image",
     "props": [
       "background-color",
       "background",
       "background-image",
       "background-repeat",
+      "background-position",
       "background-position-x",
       "background-position-y",
-      "background-size"
+      "background-size",
+      "background-origin",
+      "background-attachment",
+
+      "--tw-bg-opacity"
     ]
   },
   {
-    "name": "Color",
+    "name": "color",
     "icon": "EyeDropper",
-    "props": ["color", "border-bottom-color", "border-color", "outline-color"]
+    "props": [
+      "color",
+      "fill",
+      "border-bottom-color",
+      "border-color",
+      "outline-color",
+      "accent-color",
+      "caret-color",
+      "text-decoration-color",
+
+      "--tw-hue-rotate",
+      "--tw-ring-color",
+      "--tw-ring-offset-color",
+      "--tw-gradient-to",
+      "--tw-gradient-to-position",
+      "--tw-gradient-from-position",
+      "--tw-gradient-via-position"
+    ]
   },
   {
-    "name": "Manipulation",
+    "name": "manipulation",
     "icon": "EditShape",
-    "props": ["transform", "transition-property", "transition-timing-function", "transition-duration"]
+    "props": [
+      "transform",
+      "transition-property",
+      "transition-timing-function",
+      "transition-duration",
+      "transition-delay",
+      "will-change"
+    ]
   },
   {
-    "name": "FX",
+    "name": "fx",
     "icon": "Wand",
     "props": [
       "cursor",
+      "scroll-behavior",
+      "overscroll-behavior",
+      "overscroll-behavior-x",
+      "overscroll-behavior-y",
       "box-shadow",
       "border",
       "border-width",
+      "border-top-width",
+      "border-right-width",
+      "border-bottom-width",
+      "border-left-width",
       "border-top",
       "border-bottom",
       "border-left",
       "border-right",
+      "border-top-color",
+      "border-bottom-color",
+      "border-left-color",
+      "border-right-color",
+      "border-inline-start-color",
+      "border-inline-end-color",
+      "border-inline-start-width",
+      "border-inline-end-width",
       "border-bottom-right-radius",
       "border-bottom-left-radius",
+
       "border-bottom-style",
       "border-bottom-width",
       "border-style",
       "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+      "border-start-start-radius",
+      "border-start-end-radius",
+      "border-end-start-radius",
+      "border-end-end-radius",
+
+      "stroke",
+      "stroke-width",
+
+      "outline-style",
+      "outline-offset",
+      "outline-width",
+
       "appearance",
-      "pointer-events"
+      "pointer-events",
+
+      "backdrop-filter",
+      "background-clip",
+
+      "--tw-border-opacity",
+
+      "--tw-shadow",
+      "--tw-shadow-color",
+
+      "--tw-ring-inset",
+      "--tw-ring-offset-width",
+      "--tw-ring-opacity",
+      "--tw-placeholder-opacity"
     ]
   },
   {
-    "name": "Dimensions",
+    "name": "dimensions",
     "icon": "Maximize",
     "props": [
       "max-width",
@@ -117,7 +209,14 @@
       "padding-right",
       "padding-bottom",
       "padding-left",
+      "padding-inline-start",
+      "padding-inline-end",
       "object-fit"
     ]
+  },
+  {
+    "name": "filter",
+    "icon": "Hammer",
+    "props": ["filter", "mix-blend-mode", "background-blend-mode"]
   }
 ]
