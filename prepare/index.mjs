@@ -1,4 +1,3 @@
-import paths from "./paths.mjs";
 import { parse } from "./parse.mjs";
 import _ from "./msg.mjs";
 import { readFileSync, writeFileSync } from "fs";
@@ -7,11 +6,19 @@ import { exec } from 'child_process';
 
 const execPromise = promisify(exec);
 
-_.info('Tailwind Tools\n');
+const paths = {
+  config: '../data/tailwind.config.js',
+  inputCss: '../data/input.css',
+  outputCss: '../data/build.css',
+  buildJson: '../data/utilities.json'
+}
 
+
+_.info('\nTailwind Tools');
 _.log('Generating CSS');
+
 try {
-  await execPromise(`npx tailwindcss -c ${paths.config} -i ${paths.inputCss} -o ${paths.outputCss}`);
+  await execPromise(`./node_modules/.bin/tailwindcss -c ${paths.config} -i ${paths.inputCss} -o ${paths.outputCss}`);
   _.note(`${paths.outputCss} file created`);
   _.success(`ok\n`);
 } catch (err) {
