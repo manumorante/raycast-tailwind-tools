@@ -22,7 +22,7 @@
     "@raycast/api": "^1.50.0"
   },
   "devDependencies": {
-    "@raycast/eslint-config": "1.0.5",
+    "@raycast/eslint-config": "2.2.0",
     "@types/node": "18.8.3",
     "@types/react": "18.0.9",
     "eslint": "^7.32.0",
